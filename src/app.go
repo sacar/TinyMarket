@@ -1,3 +1,5 @@
+// Inside your app.go file
+
 package main
 
 import (
@@ -9,6 +11,9 @@ import (
 func main() {
 	// Create a new Gin router
 	router := gin.Default()
+
+	// Configure Gin to look for templates in the "templates" directory
+	router.LoadHTMLGlob("src/templates/*.html")
 
 	// Define a route that renders an HTML page
 	router.GET("/", func(c *gin.Context) {
